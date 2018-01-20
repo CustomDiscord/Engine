@@ -1,0 +1,9 @@
+{
+  "0.1.0": {
+    "Welcome to CustomDiscord":
+      "Hello! This is CustomDiscord, a new client mod to join the scenes, It is very HEAVILY based on DiscordInjections v4, its a fork that ive changed a bit and plan to add many features to. However currently its mostly just a by-hand rewrite of most of the DIv4 files.",
+    "Changes": [
+      "As of this implementation of the changelog not much has changed, but soon there shall be new things."
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "changelog",
+  "version": "0.1.0",
+  "main": "index.js",
+  "author": "Kura, Modified by Nightmare",
+  "description": "Displays CD Changelog"
+}

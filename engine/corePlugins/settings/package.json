@@ -1,0 +1,7 @@
+{
+  "name": "settings",
+  "version": "0.0.1",
+  "main": "index.js",
+  "author": "Nightmare (Originally Kura for DI)",
+  "description": "CD Settings Dialog"
+}
