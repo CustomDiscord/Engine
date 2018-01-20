@@ -2,3 +2,4 @@
 /node_modules
 /plugins
 !/plugins/manifest.json
+config.user.json

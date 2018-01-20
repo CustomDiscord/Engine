@@ -9,9 +9,10 @@ require('../lib/webSocket');
 // prelaunch adjustments
 const CD = {
   get conf() {
-    const conf = fs.existsSync(path.join(__dirname, '..', '..', 'config.json'))
+    /*const conf = fs.existsSync(path.join(__dirname, '..', '..', 'config.json'))
       ? require(path.join(__dirname, '..', '..', 'config.json'))
-      : {};
+      : {};*/
+    const conf = require('../../config')
     return conf;
   },
 
