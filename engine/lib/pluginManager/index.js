@@ -64,11 +64,11 @@ class PluginManager extends EventEmitter {
         .filter(f => fs.statSync(f).isDirectory())
         // filter out non node modules
         .filter(f => fs.existsSync(path.join(f, 'package.json')))
-        // filter out non plugins
+        // filter out non plugins and make sure they aren't preload plugins
         .filter(
           f =>
-            typeof require(path.join(f, 'package.json')).customdiscord ===
-            typeof {}
+            require(path.join(f, 'package.json')).customdiscord &&
+            !require(path.join(f, 'package.json').customdiscord.preload)
         )
         // load plugins
         .each(m => {

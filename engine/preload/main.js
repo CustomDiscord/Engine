@@ -48,6 +48,9 @@ WebSocket.onCreate = (socket, url) => {
   }
 };
 
+// TODO: Load Preload plugins
+// TODO: Come up with a better name for Preload Plugins
+
 process.once('loaded', async () => {
   window.include = (file, ...args) => {
     return require(path.resolve(__dirname, '..', file), ...args);
