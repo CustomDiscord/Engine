@@ -1,0 +1,8 @@
+{
+  "plugins": ["plugins/markdown", "plugins/underscore"],
+  "templates": {
+    "default": {
+      "outputSourceFiles": false
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "customdiscord",
+  "version": "0.1.0",
+  "description": "Injects CSS and JS into the Discord client",
+  "main": "index.js",
+  "scripts": {
+    "docs": "jsdoc -r -c jsdoc.json -P package.json -d docs ./engine",
+    "test": "/usr/share/discord-canary/DiscordCanary"
+  },
+  "author": "Nightmare",
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "columnizer": "^0.1.0",
+    "eventemitter3": "^3.0.0",
+    "fs-extra": "^5.0.0",
+    "pako": "^1.0.6",
+    "postcss": "^6.0.16",
+    "postcss-import": "^11.0.0",
+    "require-reload": "^0.2.2",
+    "semver": "^5.5.0"
+  },
+  "private": true,
+  "devDependencies": {
+    "jsdoc": "^3.5.5"
+  }
+}
