@@ -48,10 +48,6 @@ WebSocket.onCreate = (socket, url) => {
   }
 };
 
-process.on('uncaughtRejection', (err, info) => {
-  console.error(err, info);
-});
-
 process.once('loaded', async () => {
   window.include = (file, ...args) => {
     return require(path.resolve(__dirname, '..', file), ...args);
