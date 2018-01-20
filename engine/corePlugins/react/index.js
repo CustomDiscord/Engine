@@ -1,14 +1,5 @@
 const Plugin = module.parent.require('../components/plugin');
 
-/**
- * React plugin created by Kura for DIv4
- * It works here with possibly some modification because the plugin systems are mostly the same if not exactly.
- *
- * @private
- * @author Kura
- * @class react
- * @extends {Plugin}
- */
 class react extends Plugin {
   webPackLoad(fn, name = Math.random().toString()) {
     if (!window.webpackJsonp) {
