@@ -161,7 +161,7 @@ class react extends Plugin {
   }
 
   onMutate(muts) {
-    this.emit('mutation'.muts);
+    this.emit('mutation',muts);
 
     //change of language
     if (
@@ -193,7 +193,7 @@ class react extends Plugin {
         );
         if (programSettings && changed.childNodes.length > 0) {
           const child = changed.childNodes[0];
-          if (child.className === 'ui.standard-sidebar-view') {
+          if (child.className === 'ui-standard-sidebar-view') {
             if (added) {
               this.emit('settingsOpened', mut);
             } else {
@@ -235,9 +235,6 @@ class react extends Plugin {
         } else {
           this.emit('friendsListClosed', mut);
         }
-      } else {
-        // This did something different then i expected.. dunno what i expected but it wasn't a flood of elements
-        //this.log(changed);
       }
     });
   }

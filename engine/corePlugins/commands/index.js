@@ -27,7 +27,7 @@ class commands extends Plugin {
     document.addEventListener('keydown', (...args) => this.onKeyDown(...args));
   }
 
-  get textare() {
+  get textarea() {
     return document.querySelector('.chat .content textarea');
   }
 
@@ -180,7 +180,7 @@ class commands extends Plugin {
         .createElement(`<div class="autocomplete-1TnWNR autocomplete-1LLKUa cd-autocomplete">
       <div class="autocompleteRowVertical-3_UxVA autocompleteRow-31UJBI header">
       <div class="selector-nbyEfM" style="display: flex;"><div class="cd-autocomplete-header-label contentTitle-sL6DrN primary400-1OkqpL weightBold-2qbcng">
-      CustomDiscord Commands</div><div style="flex: 1 1;" class="cd-autocomplete-header-label contentTitle-sL6DrN cd-autocomplete-commandinfo primary400-1OkqpL weightBold-2qbcng">
+      Custom Discord Commands</div>&nbsp;<div style="flex: 1 1;" class="cd-autocomplete-header-label contentTitle-sL6DrN cd-autocomplete-commandinfo primary400-1OkqpL weightBold-2qbcng">
       PREFIX: ${this.settings.commandPrefix}</div></div></div></div>`);
       elem.parentElement.insertBefore(element, elem.nextSibling);
       this.autoComplete.addEventListener('click', ev => {

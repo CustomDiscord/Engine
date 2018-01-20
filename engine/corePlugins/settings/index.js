@@ -17,7 +17,7 @@ class settings extends Plugin {
     r.on('settingsTab', type => {
       if (this.map.hasOwnProperty(type)) {
         const element = document.querySelector(
-          '[class*="layer .sidebar .selected-eNoXEK"'
+          '[class*="layer"] .sidebar .selected-eNoxEK'
         );
         element.className = this.unselectedCss;
         this.map[type].tab.className = this.selectedCss;
@@ -28,7 +28,7 @@ class settings extends Plugin {
             plugin: this.map[type].plugin,
             title: this.map[type].name
           }),
-          document.querySelector('[class*="layer"] .content-column .div')
+          document.querySelector('[class*="layer"] .content-column').children[0]
         );
       } else {
         for (const key in this.map) {
@@ -67,14 +67,19 @@ class settings extends Plugin {
       name = plugin._name;
     }
 
+    this.log('REGISTER MY FUCKING SETTINGS TAB');
     const id = `cd-${plugin._name}-${name}`;
     const tab = document.createElement('div');
     tab.className = this.unselectedCss;
     tab.appendChild(document.createTextNode(name));
-
-    tab.onClick = () => {
+    tab.addEventListener('click', () => {
       this.react.emit('settingsTab', id);
-    };
+    });
+
+    // For some reason this didn't work. so i used the above solution.
+    //tab.onClick = () => {
+    //  this.react.emit('settingsTab', id);
+    //};
 
     this.map[id] = {
       tab,
@@ -94,7 +99,7 @@ class settings extends Plugin {
   }
 
   get settingsTabs() {
-    return document.querySelector('[class*="layer" .sidebar .side-2nYO0F');
+    return document.querySelector('[class*="layer"] .sidebar .side-2nYO0F');
   }
 
   injectSettingsTab() {
@@ -106,10 +111,10 @@ class settings extends Plugin {
     const header =
       el.previousElementSibling.previousElementSibling.previousElementSibling
         .previousElementSibling.previousElementSibling; // divider //logout //divider //changelog //divider
-
     this.settingsTabs.insertBefore(this.divider, header);
     this.settingsTabs.insertBefore(this.header, header);
     for (const key in this.map) {
+      this.log(this.map[key].tab, this.map[key].id, this.map[key].tab.onClick);
       this.settingsTabs.insertBefore(this.map[key].tab, header);
     }
   }

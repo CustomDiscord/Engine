@@ -1,6 +1,6 @@
 const e = window.React.createElement;
 
-class SettingsTitle extends Window.React.Component {
+class SettingsTitle extends window.React.Component {
   render() {
     return e(
       'h2',

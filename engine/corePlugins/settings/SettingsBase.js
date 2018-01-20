@@ -1,4 +1,4 @@
-const { SettingsTab } = require('../../elements');
+const { SettingsTitle } = require('../../elements');
 
 class SettingsBase extends window.React.Component {
   render() {
