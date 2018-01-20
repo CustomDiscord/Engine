@@ -70,8 +70,8 @@ Object.assign(exports, {
           )
 
           //transparency!
-          .replace('transparent: false', `transparent: ${conf.transparent}`);
-        if (conf.transparent) {
+          .replace('transparent: false', `transparent: ${conf.transparency}`);
+        if (conf.transparency) {
           content = content.replace('backgroundColor: ACCOUNT_GREY,', '');
         }
 
