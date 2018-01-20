@@ -91,7 +91,7 @@ class react extends Plugin {
       <div class='callout-backdrop'></div>
       <div class='modal-2LIEKY' style='opacity: 1'>
         <div class='inner-1_1f7b CD-modal-inner expanded'>
-          <div class='modal-3H0jGZ sizeMedium-1-2BNS'>
+          <div class='modal-3HOjGZ sizeMedium-1-2BNS'>
             ${content}
           </div>
         </div>

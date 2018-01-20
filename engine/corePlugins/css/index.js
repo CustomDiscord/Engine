@@ -56,7 +56,7 @@ class css extends Plugin {
           map: { annotation: false, inline: false, safe: false }
         });
         this.log(`attaching [${plugin}:${fileName}]`);
-        document.body.appendChild(this._createStyle(content, plugin, fileName));
+        document.head.appendChild(this._createStyle(content, plugin, fileName));
       });
     });
 
@@ -72,7 +72,7 @@ class css extends Plugin {
         map: { annotation: false, inline: false, safe: false }
       });
       this.log(`attaching userstyle [${fileName}]`);
-      document.body.appendChild(
+      document.head.appendChild(
         this._createStyle(content, '$userstyle$', fileName)
       );
       this.watcher.addFile(filePath, fileName);
@@ -104,7 +104,7 @@ class css extends Plugin {
           map: { annotation: false, inline: false, safe: false }
         });
         this.log(`attaching [${plugin.package.name}:${fileName}]`);
-        document.body.appendChild(
+        document.head.appendChild(
           this._createStyle(content, plugin.package.name, fileName)
         );
       });
@@ -126,12 +126,12 @@ class css extends Plugin {
     });
 
     this.log(`attaching userstyle [${fileName}]`);
-    const el = document.body.querySelector(
+    const el = document.head.querySelector(
       `style[data-plugin="$userstlye$"][data-filename="${fileName}"]`
     );
     if (!el) {
       // what, weird, add it again anyway.
-      document.body.appendChild(
+      document.head.appendChild(
         this._createStyle(content, '$userstyle$', fileName)
       );
     } else {

@@ -20,7 +20,7 @@ const CD = {
   },
 
   get version() {
-    this.package.version;
+    return this.package.version;
   }
 };
 
