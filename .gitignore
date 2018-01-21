@@ -3,3 +3,8 @@
 /plugins
 !/plugins/manifest.json
 config.user.json
+
+#temp files
+/tmp
+tmp.txt
+tmp.js

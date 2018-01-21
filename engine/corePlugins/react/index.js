@@ -46,7 +46,6 @@ class react extends Plugin {
   }
 
   async preload() {
-    window.CD = this.CD;
     this.observer = new MutationObserver(mutation => this.onMutate(mutation));
     let reactRegistered = await this.registerReact();
     while (!reactRegistered) reactRegistered = await this.registerReact();
@@ -161,7 +160,7 @@ class react extends Plugin {
   }
 
   onMutate(muts) {
-    this.emit('mutation',muts);
+    this.emit('mutation', muts);
 
     //change of language
     if (

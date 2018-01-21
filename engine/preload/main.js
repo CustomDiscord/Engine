@@ -12,7 +12,7 @@ const CD = {
     /*const conf = fs.existsSync(path.join(__dirname, '..', '..', 'config.json'))
       ? require(path.join(__dirname, '..', '..', 'config.json'))
       : {};*/
-    const conf = require('../../config')
+    const conf = require('../../config');
     return conf;
   },
 
@@ -62,26 +62,33 @@ process.once('loaded', async () => {
   //load core modules
   await CD.plugins.loadByPath(
     path.join(__dirname, '..', 'corePlugins', 'react'),
+    true,
     true
   );
   await CD.plugins.loadByPath(
     path.join(__dirname, '..', 'corePlugins', 'settings'),
+    true,
     true
   );
   await CD.plugins.loadByPath(
     path.join(__dirname, '..', 'corePlugins', 'commands'),
+    true,
     true
   );
   await CD.plugins.loadByPath(
     path.join(__dirname, '..', 'corePlugins', 'changelog'),
+    true,
     true
   );
   await CD.plugins.loadByPath(
     path.join(__dirname, '..', 'corePlugins', 'css'),
+    true,
     true
   );
 
   await CD.plugins.loadPluginPath();
+
+  if (CD.conf.debug) window.CD = CD;
 
   ready.then(() => CD.plugins.ready());
 });
