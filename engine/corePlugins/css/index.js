@@ -127,7 +127,7 @@ class css extends Plugin {
 
     this.log(`attaching userstyle [${fileName}]`);
     const el = document.head.querySelector(
-      `style[data-plugin="$userstlye$"][data-filename="${fileName}"]`
+      `style[data-plugin="$userstyle$"][data-filename="${fileName}"]`
     );
     if (!el) {
       // what, weird, add it again anyway.
