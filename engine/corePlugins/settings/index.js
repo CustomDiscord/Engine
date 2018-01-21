@@ -66,8 +66,6 @@ class settings extends Plugin {
       component = name;
       name = plugin._name;
     }
-
-    this.log('REGISTER MY FUCKING SETTINGS TAB');
     const id = `cd-${plugin._name}-${name}`;
     const tab = document.createElement('div');
     tab.className = this.unselectedCss;
