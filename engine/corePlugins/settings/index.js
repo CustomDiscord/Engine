@@ -43,7 +43,7 @@ class settings extends Plugin {
 
     this.divider = document.createElement('div');
     this.divider.className =
-      'separator-3z7STW marginTop8-2g0a2N marginBottom8-1mABJ4';
+      'separator-3z7STW marginTop8-2gOa2N marginBottom8-1mABJ4';
 
     this.manager.on('unload', plugin => {
       Object.keys(this.map)
