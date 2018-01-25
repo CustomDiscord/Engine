@@ -3,6 +3,7 @@
 /plugins
 !/plugins/manifest.json
 config.user.json
+/.vscode
 
 #temp files
 /tmp
