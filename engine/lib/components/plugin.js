@@ -189,17 +189,23 @@ class Plugin extends EventEmitter {
   }
 
   log(...args) {
-    console.log(
-      `%c[${this._name}]`,
-      `color:#${this.color}; font - weight: bold`,
-      ...args
-    );
+    this.console('log', ...args);
+  }
+  info(...args) {
+    this.console('info', ...args);
   }
 
+  warn(...args) {
+    this.console('warn', ...args);
+  }
   error(...args) {
-    console.error(
+    this.console('error', ...args);
+  }
+
+  console(action, ...args) {
+    console[action](
       `%c[${this._name}]`,
-      `color:${this.color}; font - weight: bold;`,
+      `color: #${this.color}; font-weight: bold;`,
       ...args
     );
   }

@@ -22,6 +22,10 @@ const CD = {
 
   get version() {
     return this.package.version;
+  },
+
+  engineRequire(pathName) {
+    return require(`../${pathName}`);
   }
 };
 
@@ -88,7 +92,12 @@ process.once('loaded', async () => {
 
   await CD.plugins.loadPluginPath();
 
-  if (CD.conf.debug) window.CD = CD;
-
+  if (CD.conf.debug) {
+    window.CD = CD;
+    _cdebug = window.console.debug;
+    window.console.debug = (...args) => {
+      if (window.CD.conf.debug) _cdebug(...args);
+    };
+  }
   ready.then(() => CD.plugins.ready());
 });
