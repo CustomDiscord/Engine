@@ -98,6 +98,7 @@ class PluginManager extends EventEmitter {
       path: pluginPath,
       package: pkg,
       loaded: false,
+      noMain: false,
       loading: true,
       cls: null,
       inst: null
@@ -109,10 +110,22 @@ class PluginManager extends EventEmitter {
     }
 
     // load the plugin
+    if (pkg.main === null || pkg.main === undefined) {
+      console.log(
+        `Plugin ${
+          pkg.name
+        } has no main file specified. Loading only CSS & preloadJS.`
+      );
+      p.loaded = true;
+      p.loading = false;
+      p.noMain = true;
+      return;
+    }
     p.cls = reload(path.join(pluginPath, pkg.main || 'index'));
     p.inst = new p.cls(this, p);
     p.loaded = true;
     p.loading = false;
+    p.noMain = false;
 
     await p.inst._preload();
 
@@ -132,7 +145,11 @@ class PluginManager extends EventEmitter {
   }
 
   async unload(name) {
-    if (!this.plugins[name] || !this.plugins[name].loaded) {
+    if (
+      !this.plugins[name] ||
+      !this.plugins[name].loaded ||
+      this.plugins[name].noMain
+    ) {
       return true;
     }
 
@@ -172,7 +189,7 @@ class PluginManager extends EventEmitter {
 
     this.pluginsEnabled[name] = true;
     if (load) {
-      return this.loa(name);
+      return this.load(name);
     }
 
     return true;
