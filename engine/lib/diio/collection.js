@@ -82,7 +82,8 @@ class Collection {
     let row;
     while ((row = this._data.shift())) {
       const data = new this.cls(this.client, row);
-      this.found(data)._datathis._loadedData.set(data.id, data);
+      this.found(data);
+      this._loadedData.set(data.id, data);
 
       if (compare(data)) {
         return data;

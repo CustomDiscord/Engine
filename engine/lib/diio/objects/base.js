@@ -24,7 +24,7 @@ class Base extends EventEmitter {
           !this.hasOwnProperty[normalized] &&
           this._optionalFields.indexOf(k) < 0
         ) {
-          console.warn('[DIIO] setting unkown value in merge process!', k);
+          console.warn('[DIIO] setting unknown value in merge process!', k);
         }
         this[normalized] = o[k];
       }

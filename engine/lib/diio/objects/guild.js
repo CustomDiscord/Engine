@@ -1,5 +1,6 @@
 const Base = require('./base');
 const EP = require('../endpoints');
+const Collection = require('../collection');
 
 class Guild extends Base {
   constructor(client, guild) {
@@ -30,4 +31,4 @@ class Guild extends Base {
   }
 }
 
-module.expors = Guild;
+module.exports = Guild;

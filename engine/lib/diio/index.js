@@ -104,7 +104,7 @@ class DiscordClient extends EventEmitter {
           if (!g) {
             throw new Error('requested unknown guild');
           }
-          g.memebers.addArray(message.d.members);
+          g.members.addArray(message.d.members);
           this.users.addArray(
             message.d.presences.map(p =>
               Object.assign(p.user, {
@@ -128,7 +128,7 @@ class DiscordClient extends EventEmitter {
               if (!message.d.user.username) {
                 throw new Error('GUILD_MEMBER_ADD: requested unknown user!');
               } else {
-                u = new UserChannels(this.message.d.user);
+                u = new User(this, message.d.user);
                 this.users.add(u);
               }
             }
@@ -163,7 +163,7 @@ class DiscordClient extends EventEmitter {
             const m = u.getMemberFor(message.d.guild_id);
             if (!m) {
               const g = this.guilds.get(message.d.guild_id);
-              g.memeber.add(new Memeber(this, message.d));
+              g.members.add(new Member(this, message.d));
             } else {
               m.merge(message.d);
             }
