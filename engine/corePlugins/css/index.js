@@ -62,7 +62,9 @@ class css extends Plugin {
 
     this.getSettingsNode('stylesheets', []).forEach(async fileName => {
       const filePath = path.resolve(
-        this.manager.expand(this.CD.conf.cssPath || './CSS'),
+        this.manager.expand(
+          this.CD.conf.cssPath || path.join(__dirname, '..', '..', 'CSS')
+        ),
         fileName
       );
       let content = await fs.readFile(filePath, 'utf-8');
