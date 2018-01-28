@@ -34,7 +34,7 @@ class SettingsTabs extends React.PureComponent {
         'ul',
         {
           className:
-            'item-2zi_5J marginBottom8-1mABJ4 horizontal-2VE-Fw flex-3B1Tl4 directionRow-yNbSvJ cardPrimaryEditable-2IQ7-V card-3DrRmC di-tabs-tab'
+            'item-2zi_5J marginBottom8-1mABJ4 horizontal-2VE-Fw flex-3B1Tl4 directionRow-yNbSvJ cardPrimaryEditable-2IQ7-V card-3DrRmC cd-tabs-tab'
         },
         tabNodes
       ),

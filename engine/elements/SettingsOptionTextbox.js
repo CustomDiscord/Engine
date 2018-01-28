@@ -10,7 +10,10 @@ class SettingsOptionTextbox extends Base {
   constructor(props) {
     super(props);
 
-    this.state = { value: this.getProp() };
+    this.state = {
+      value: this.getProp(),
+      lastPlaceholder: this.props.defaultValue || this.props.placeholder || undefined
+    };
   }
 
   render() {
@@ -31,7 +34,15 @@ class SettingsOptionTextbox extends Base {
       titles.push(
         e(SettingsOptionDescription, { text: this.props.description })
       );
-
+    
+    if ((this.props.defaultValue || this.props.placeholder || undefined) !== this.state.lastPlaceholder) {
+      this.setState({
+        value: this.getProp(),
+        lastPlaceholder: this.props.defaultValue || this.props.placeholder || undefined
+      })
+    }
+    
+    
     return e(
       'div',
       {},

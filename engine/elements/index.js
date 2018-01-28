@@ -12,3 +12,4 @@ exports.SettingsSection = require('./SettingsSection');
 exports.SettingsTitle = require('./SettingsTitle');
 exports.SettingsTabs = require('./SettingsTabs');
 exports.SettingsTabsPane = require('./SettingsTabsPane');
+exports.SettingsLoader = require('./SettingsLoader');
