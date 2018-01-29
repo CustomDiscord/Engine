@@ -7,6 +7,7 @@ exports.SettingsOptionToggle = require('./SettingsOptionToggle');
 exports.SettingsOptionTitle = require('./SettingsOptionTitle');
 exports.SettingsOptionDescription = require('./SettingsOptionDescription');
 exports.SettingsOptionButton = require('./SettingsOptionButton');
+exports.SettingsOptionButtonConnection = require('./SettingsOptionButtonConnection');
 exports.SettingsExpandableSection = require('./SettingsExpandableSection');
 exports.SettingsSection = require('./SettingsSection');
 exports.SettingsTitle = require('./SettingsTitle');
