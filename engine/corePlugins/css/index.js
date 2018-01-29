@@ -17,9 +17,14 @@ class css extends Plugin {
     this.manager.on('plugins-preloaded', plugins => {
       plugins.map(plugin => this.manager.get(plugin, true)).forEach(plugin => {
         const name = plugin.package.name;
-        const css = plugin.package.customdiscord
+        /*const css = plugin.package.customdiscord
           ? plugin.package.customdiscord.css
-          : [] || [];
+          : [] || [];*/
+        const css = typeof plugin.package.customdiscord === 'object' ? 
+          typeof plugin.package.customdiscord.css === 'object' ? 
+            plugin.package.customdiscord.css 
+          : [] 
+        : []; // TODO: Permanent fix
         if (!css.length) {
           return this.log(name, 'did not specify any css files, skipping');
         } else {
@@ -63,7 +68,7 @@ class css extends Plugin {
     this.getSettingsNode('stylesheets', []).forEach(async fileName => {
       const filePath = path.resolve(
         this.manager.expand(
-          this.CD.conf.cssPath || path.join(__dirname, '..', '..', 'CSS')
+          this.CD.conf.cssPath || path.join(__dirname, '..', '..', '..', 'CSS')
         ),
         fileName
       );
