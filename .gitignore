@@ -9,3 +9,7 @@ config.user.json
 /tmp
 tmp.txt
 tmp.js
+
+#Exclude all files from CSS but keep folder in git
+CSS/
+-CSS/.gitkeep
