@@ -1,7 +1,11 @@
 {
   "name": "css",
+  "displayName": "CSS Injector",
   "version": "0.0.1",
   "main": "index.js",
   "author": "Kura",
-  "description": "Custom CSS"
+  "description": "Custom CSS",
+  "customdiscord": {
+    "core": true
+  }
 }

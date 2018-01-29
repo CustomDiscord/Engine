@@ -1,10 +1,12 @@
 {
   "name": "react",
+  "displayName": "React",
   "version": "0.0.1",
   "main": "index.js",
   "author": "Kura",
   "description": "Basic react interation with discord",
   "customdiscord": {
-    "css": ["modal.css"]
+    "css": ["modal.css"],
+    "core": true
   }
 }

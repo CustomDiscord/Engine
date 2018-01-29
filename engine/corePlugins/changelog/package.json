@@ -1,7 +1,11 @@
 {
   "name": "changelog",
+  "displayName": "Changelog",
   "version": "0.1.0",
   "main": "index.js",
   "author": "Kura, Modified by Nightmare",
-  "description": "Displays CD Changelog"
+  "description": "Displays CD Changelog",
+  "customdiscord": {
+    "core": true
+  }
 }

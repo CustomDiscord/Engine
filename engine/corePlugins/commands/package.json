@@ -1,7 +1,11 @@
 {
   "name": "commands",
+  "displayName": "Command Handler",
   "version": "0.0.1",
   "main": "index.js",
   "author": "Kura",
-  "description": "CD Command Handler"
+  "description": "CD Command Handler",
+  "customdiscord": {
+    "core": true
+  }
 }
